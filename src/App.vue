@@ -1,5 +1,5 @@
 <script>
-export default function App() {
+export default {
   data() {
       return {
         title: "hello world",
@@ -19,7 +19,7 @@ export default function App() {
       // this.$store.dispatch('setPjsipContacts')
     },
     computed: {
-      ...Vuex.mapState([]'snackbarMessage']),
+      ...Vuex.mapState(['snackbarMessage']),
       showSnackbar: {
         get () {
           return this.$store.state.showSnackbar
