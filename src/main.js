@@ -1,20 +1,13 @@
 import App from './App.vue'
-import './assets/main.css'
-import { createApp } from 'vue'
 import { createStore } from 'vuex'
+import { phoneState, phoneGetters, phoneMutations } from './phone.js'
+import Vue from 'vue'
 
-// Create a new store instance.
-const store = createStore({
-  state () {
-    return {
-      count: 0
-    }
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  }
-}) 
+Vue.config.productionTip =false
 
-createApp(App).mount('#app')
+new Vue({
+  phoneState,
+  phoneGetters,
+  phoneMutations,
+  render: h => h(App)
+}).$mount('#app')

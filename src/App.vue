@@ -1,5 +1,9 @@
 <script>
-export default {
+export  const vueApp = new Vue({
+    el: "#app",
+    vuetify : new Vuetify({
+      theme: { dark: false },
+    })}),
   data() {
       return {
         title: "hello world",
