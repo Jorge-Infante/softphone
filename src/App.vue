@@ -13,7 +13,7 @@ export default {
     },
     created() {
       let userInfo = {name:'testinf', avatar: '/static/images/male.png', extension: '113'}
-      console.log('mi phoneMutations',phoneMutations.UPDATE_USER_INFO)
+      console.log('Valor de UPDATE_USER_INFO en create:',UPDATE_USER_INFO)
       this.$store.commit('UPDATE_USER_INFO', userInfo)
       this.$store.commit('SET_PHONE_STATE', { phoneVar: 'localIp', phoneState: 'https://test.sipmovil.com/' })
       // this.$store.dispatch('setPjsipContacts')
@@ -396,6 +396,7 @@ import NumberKey from "./components/NumberKey.vue";
 import PhoneWidget from "./components/PhoneWidget.vue";
 import Vuex from "vuex"
 import {phoneState,phoneGetters,phoneMutations} from "./phone.js"
+let UPDATE_USER_INFO=phoneMutations.UPDATE_USER_INFO
 </script>
 
 
