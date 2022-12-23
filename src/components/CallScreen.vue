@@ -47,7 +47,7 @@ export default {
       conferenceCallInfo: true,
       isAddingMember: null,
       isMobileDevice: true,
-      callEvents: null,
+      callEvents: [1,2,3],
       browserContacts: null,
     };
   },
@@ -162,7 +162,7 @@ export default {
         v-for="ev in callEvents"
         :key="ev"
       >
-        {{ getEventLabel(ev) }}
+        <!-- {{ getEventLabel(ev) }} -->
       </li>
     </ul>
 

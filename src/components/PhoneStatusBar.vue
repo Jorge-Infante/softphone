@@ -25,7 +25,7 @@ export default{
     //   'callQuality',
     // ]),
     colorStatus() {
-      color = ''
+      let color = ''
       if (this.callQuality < 0){
         color = '#ffffff'
       }else if (this.callQuality >= 0 && this.callQuality < 10) {
