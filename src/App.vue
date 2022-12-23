@@ -1,9 +1,5 @@
 <script>
-export  const vueApp = new Vue({
-    el: "#app",
-    vuetify : new Vuetify({
-      theme: { dark: false },
-    })}),
+export default function App() {
   data() {
       return {
         title: "hello world",
@@ -23,7 +19,7 @@ export  const vueApp = new Vue({
       // this.$store.dispatch('setPjsipContacts')
     },
     computed: {
-      ...Vuex.mapState(['snackbarMessage']),
+      ...Vuex.mapState([]'snackbarMessage']),
       showSnackbar: {
         get () {
           return this.$store.state.showSnackbar
