@@ -373,25 +373,13 @@ export default {
     },
   components: {
     Phone,
-    PhoneStatusBar,
-    StatusScreen, 
-    CallScreen, 
-    CallControls,
-    ConferenceManager,
     ContactBrowser,
-    KeyBoard,
     NumberKey,
-    PhoneWidget
+    PhoneWidget,
   }
 };
 import Phone from "./components/Phone.vue"
-import PhoneStatusBar from "./components/PhoneStatusBar.vue";
-import StatusScreen from "./components/StatusScreen.vue";
-import CallScreen from "./components/CallScreen.vue";
-import CallControls from "./components/CallControls.vue";
-import ConferenceManager from "./components/ConferenceManager.vue";
 import ContactBrowser from "./components/ContactBrowser.vue";
-import KeyBoard from "./components/KeyBoard.vue";
 import NumberKey from "./components/NumberKey.vue";
 import PhoneWidget from "./components/PhoneWidget.vue";
 import Vuex from "vuex"
@@ -402,15 +390,12 @@ import {phoneState,phoneGetters,phoneMutations} from "./phone.js"
 
 <template>
   <Phone />
-  <PhoneStatusBar />
-  <StatusScreen />
-  <CallScreen />
-  <CallControls />
-  <ConferenceManager />
   <ContactBrowser />
-  <KeyBoard />
   <NumberKey />
   <PhoneWidget />
+
+  
+  
 
 
 

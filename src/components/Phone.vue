@@ -18,12 +18,23 @@ export default {
         left: "0px",
         height: "100%",
       },
-      //Fake esperando data
-      keyboardActive:true,
-      showConferenceOptions:false
     }
   },
+  components:{
+    PhoneStatusBar,
+    StatusScreen,
+    CallScreen,
+    ConferenceManager,
+    CallControls,
+    KeyBoard
+  }
 };
+import PhoneStatusBar from './PhoneStatusBar.vue';
+import StatusScreen from './StatusScreen.vue';
+import CallScreen from './CallScreen.vue';
+import ConferenceManager from './ConferenceManager.vue';
+import CallControls from './CallControls.vue';
+import KeyBoard from './KeyBoard.vue';
 </script>
 
 <template>
@@ -32,17 +43,17 @@ export default {
     dark
     :style="[baseStyle, isMobileDevice ? mobilePhoneStyle : phoneStyle]"
   >
-    <phone-status-bar></phone-status-bar>
-    <status-screen></status-screen>
+    <PhoneStatusBar />
+    <StatusScreen />
     <v-card-text :style="isMobileDevice ? { height: '90%' } : {}">
-      <key-board v-if="keyboardActive && !showConferenceOptions"></key-board>
-      <call-screen
+      <KeyBoard v-if="keyboardActive && !showConferenceOptions"></KeyBoard>
+      <CallScreen
         v-else-if="!keyboardActive && !showConferenceOptions"
-      ></call-screen>
-      <conference-manager
+      ></CallScreen>
+      <ConferenceManager
         v-else-if="showConferenceOptions"
-      ></conference-manager>
-      <call-controls></call-controls>
+      ></ConferenceManager>
+      <CallControls></CallControls>
     </v-card-text>
   </v-card>
 </template>
