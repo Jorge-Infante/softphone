@@ -1,5 +1,5 @@
 import App from './App.vue'
-// import './assets/main.css'
+import './assets/main.css'
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
 import { phoneState, phoneGetters, phoneMutations } from './phone.js'
@@ -20,13 +20,18 @@ app.mount('#app');
 // app2.mount('#app')
 
 // Create a new store instance.
-// export default new createStore({
-//   modules:{
-//     phoneState,
-//     phoneGetters,
-//     phoneMutations
-//   }
-// })
+const store = createStore({
+  state () {
+    return {
+      count: 0
+    }
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+}) 
 
 // new Vue({
 //   phoneState,
