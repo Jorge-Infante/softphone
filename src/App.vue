@@ -14,8 +14,8 @@ export default {
     created() {
       let userInfo = {name:'testinf', avatar: '/static/images/male.png', extension: '113'}
       console.log('mi phoneMutations',phoneMutations.UPDATE_USER_INFO)
-      this.$store.commit('UPDATE_USER_INFO', userInfo)
-      this.$store.commit('SET_PHONE_STATE', { phoneVar: 'localIp', phoneState: 'https://test.sipmovil.com/' })
+      // this.$store.commit('UPDATE_USER_INFO', userInfo)
+      // this.$store.commit('SET_PHONE_STATE', { phoneVar: 'localIp', phoneState: 'https://test.sipmovil.com/' })
       // this.$store.dispatch('setPjsipContacts')
     },
     computed: {
@@ -25,7 +25,7 @@ export default {
           return this.$store.state.showSnackbar
         },
         set (newValue) {
-          return this.$store.commit('SET_PHONE_STATE', { phoneVar: 'showSnackbar', phoneState: newValue })
+          // return this.$store.commit('SET_PHONE_STATE', { phoneVar: 'showSnackbar', phoneState: newValue })
         }
       }
     },
@@ -401,8 +401,16 @@ import {phoneState,phoneGetters,phoneMutations} from "./phone.js"
 
 
 <template>
-  <h3>Mi sofphone</h3>
-
+  <Phone />
+  <PhoneStatusBar />
+  <StatusScreen />
+  <CallScreen />
+  <CallControls />
+  <ConferenceManager />
+  <ContactBrowser />
+  <KeyBoard />
+  <NumberKey />
+  <PhoneWidget />
 
 
 

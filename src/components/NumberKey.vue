@@ -16,12 +16,12 @@ export default {
     },
   },
   computed: {
-    digit() {
-      return String(this.keyData.digit);
-    },
-    smallSize() {
-      return this.$store.state.phoneSmall;
-    },
+    // digit() {
+    //   return String(this.keyData.digit);
+    // },
+    // smallSize() {
+    //   return this.$store.state.phoneSmall;
+    // },
     // ...Vuex.mapState(["isMobileDevice"]),
   },
   directives: {

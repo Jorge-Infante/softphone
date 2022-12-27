@@ -3,7 +3,7 @@ console.log('phone widget mounted');
 export default {
   data() {
     return {
-      number: this.$store.state.callNumber,
+      // number: this.$store.state.callNumber,
       widgetStyle: {
         cursor: "pointer",
         position: "fixed",
@@ -47,25 +47,25 @@ export default {
       return this.$store.getters.callDurationFormat;
     },
     badgeColor() {
-      const phoneStatus = this.$store.state.phoneStatus;
-      badgeStyle = null;
-      switch (phoneStatus) {
-        case "UNREGISTERED":
-          badgeStyle = { background: "lightgray" };
-          break;
-        case "REGISTERED":
-          badgeStyle = { background: "#28a745" };
-          break;
-        case "BUSY":
-          badgeStyle = { background: "#ffc107" };
-          break;
-        case "IN_CALL":
-          badgeStyle = { background: "#dc3545" };
-          break;
-        default:
-          badgeStyle = { background: "lightgray" };
-          break;
-      }
+      // const phoneStatus = this.$store.state.phoneStatus;
+      let badgeStyle = null;
+      // switch (phoneStatus) {
+      //   case "UNREGISTERED":
+      //     badgeStyle = { background: "lightgray" };
+      //     break;
+      //   case "REGISTERED":
+      //     badgeStyle = { background: "#28a745" };
+      //     break;
+      //   case "BUSY":
+      //     badgeStyle = { background: "#ffc107" };
+      //     break;
+      //   case "IN_CALL":
+      //     badgeStyle = { background: "#dc3545" };
+      //     break;
+      //   default:
+      //     badgeStyle = { background: "lightgray" };
+      //     break;
+      // }
       return badgeStyle;
     },
   },

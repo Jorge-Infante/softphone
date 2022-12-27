@@ -22,15 +22,15 @@ export default {
     //   "userInConference",
     // ]),
     showBrowser: {
-      get() {
-        return this.$store.state.showBrowser;
-      },
-      set(newValue) {
-        return this.$store.commit("SET_PHONE_STATE", {
-          phoneVar: "showBrowser",
-          phoneState: newValue,
-        });
-      },
+      // get() {
+      //   return this.$store.state.showBrowser;
+      // },
+      // set(newValue) {
+      //   return this.$store.commit("SET_PHONE_STATE", {
+      //     phoneVar: "showBrowser",
+      //     phoneState: newValue,
+      //   });
+      // },
     },
   },
   methods: {
@@ -87,9 +87,9 @@ export default {
       this.query = "";
     },
   },
-  created() {
-    this.setContacts();
-  },
+  // created() {
+  //   this.setContacts();
+  // },
 };
 </script>
 <template>
