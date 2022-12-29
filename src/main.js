@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import store from "./store"
 import App from './App.vue'
+import * as cors from 'cors';
 
 // Vuetify
 import 'vuetify/styles'
