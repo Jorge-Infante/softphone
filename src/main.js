@@ -1,41 +1,34 @@
-import App from './App.vue'
-import './assets/main.css'
 import { createApp } from 'vue'
-import { createStore } from 'vuex'
-import { phoneState, phoneGetters, phoneMutations } from './phone.js'
-// import Vue from 'vue'
+import store from "./store"
+import App from './App.vue'
 
+// Vuetify
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
+const vuetify = createVuetify({
+  components,
+  directives,
+})
 
-const app = createApp(App);
-app.use(phoneMutations);
-app.use(phoneGetters);
-app.use(phoneState);
-app.mount('#app');
+createApp(App).use(store).use(vuetify).mount('#app')
 
-// const app2 = createStore(App);
-// app2.use(phoneMutations);
-// app2.use(phoneGetters);
-// app2.use(phoneState);
-// app2.mount('#app')
+// const cors = require('cors');
+// App.use(cors())
+// var whiteList = ['https://test.sipmovil.com/customer/people/']
 
-// Create a new store instance.
-const store = createStore({
-  state () {
-    return {
-      count: 0
-    }
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  }
-}) 
+// var corsOptions = {
+//   origin : function(origin, callback){
+//     if(whiteList.indexOf(origin) != -1){
+//       callback(null, true);
+//     }else{
+//       callback(new Error('no cors'))
+//     }
+//   }
+// }
 
-// new Vue({
-//   phoneState,
-//   phoneGetters,
-//   phoneMutations,
-//   render: h => h(App)
-// }).$mount('#app')
+// appendFile.get('/', cors(corsOptions),(req, res)=>{
+//   res.json({mensaje: 'ok'})
+// })
