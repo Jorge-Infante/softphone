@@ -4,18 +4,27 @@ import axios from "axios"
 
 const apiClient = axios.create({
 
+  baseURL: 'https://test.sipmovil.com/',
+  withCredentials: false,
   headers: {
-    "Access-Control-Allow-Origin": "*",
-    Accept: 'application/json',
     'Content-Type': 'application/json',
-    Authentication: 'Token d0c481f5886f30f533f0e88a4190210db154d5f0',
-    "X-CSRFToken": 'yBAqqbZNB69nEEQLFTeO3VBI7TfRKalwAEJRRr6wRNnBlEv5oiU0RDt0EAFAXf52'
+    Accept: 'application/json',
+    Authorization: 'Token ccbb8ecebd3be1606157ceedc86f179b8123fbfe',
+    //"X-CSRFToken": 'yBAqqbZNB69nEEQLFTeO3VBI7TfRKalwAEJRRr6wRNnBlEv5oiU0RDt0EAFAXf52'
   }
 })
 
-apiClient.get("https://test.sipmovil.com/").then(response => {
+apiClient.get("api/calls/").then(response => {
     console.log(response);
   }).catch(e => console.log(e));
+
+const searchFromApi = async (query) => {
+  return await axios.get( {
+    url: url,
+    method: 'GET',
+    params: query,
+  })
+}
 
 const apiRequest = {
   getLabel(callDirection, number, userId, optionPush){
