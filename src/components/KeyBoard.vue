@@ -1,4 +1,4 @@
-<script>
+<script> 
 import {mapState}  from "vuex"
 import NumberKey from "./NumberKey.vue";
 
@@ -65,7 +65,7 @@ export default {
     ])
   },
   components:{
-    NumberKey,
+    NumberKey
   }
 }
 </script>

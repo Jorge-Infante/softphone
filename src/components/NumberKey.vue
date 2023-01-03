@@ -26,8 +26,9 @@ export default {
   },
   computed: {
     digit() {
-      console.log(this.keyData);
-      return String(this.keyData.digit);
+      if (this.keyData){
+        return String(this.keyData.digit);
+      }
     },
     smallSize() {
       return this.$store.state.phoneSmall;
