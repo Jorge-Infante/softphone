@@ -1,4 +1,7 @@
 <script>
+import {mapState}  from "vuex"
+import {mapActions}  from "vuex"
+
 console.log('contact browser mounted');
 export default {
   data() {
@@ -15,26 +18,26 @@ export default {
     };
   },
   computed: {
-    // ...Vuex.mapState([
-    //   "browserTitle",
-    //   "browserContacts",
-    //   "browserAction",
-    //   "userInConference",
-    // ]),
+    ...mapState([
+      "browserTitle",
+      "browserContacts",
+      "browserAction",
+      "userInConference",
+    ]),
     showBrowser: {
-      // get() {
-      //   return this.$store.state.showBrowser;
-      // },
-      // set(newValue) {
-      //   return this.$store.commit("SET_PHONE_STATE", {
-      //     phoneVar: "showBrowser",
-      //     phoneState: newValue,
-      //   });
-      // },
+      get() {
+        return this.$store.state.showBrowser;
+      },
+      set(newValue) {
+        return this.$store.commit("SET_PHONE_STATE", {
+          phoneVar: "showBrowser",
+          phoneState: newValue,
+        });
+      },
     },
   },
   methods: {
-    // ...Vuex.mapActions(["setContacts", "closeDialog"]),
+    ...mapActions(["setContacts", "closeDialog"]),
     filterContacts() {
       query = this.query.toLowerCase();
       if (query == "") {
@@ -87,9 +90,9 @@ export default {
       this.query = "";
     },
   },
-  // created() {
-  //   this.setContacts();
-  // },
+  created() {
+    this.setContacts();
+  },
 };
 </script>
 <template>

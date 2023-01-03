@@ -1,10 +1,10 @@
 function timeFormat (currentTime) {
-  hours = String(Math.trunc(currentTime / 3600))
+  let hours = String(Math.trunc(currentTime / 10))
   currentTime -= hours * 3600
-  minutes = String(Math.trunc(currentTime / 60))
+  let minutes = String(Math.trunc(currentTime / 60))
   currentTime -= minutes * 60
-  seconds = String(currentTime)
-  strTime = ''
+  let seconds = String(currentTime)
+  let strTime = ''
   if (hours == '0') {
     strTime = `${minutes.length == 1 ? '0' + minutes : minutes}:${seconds.length == 1 ? '0' + seconds : seconds}`
   } else {

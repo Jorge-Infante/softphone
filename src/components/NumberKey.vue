@@ -1,6 +1,15 @@
 <script>
+import {mapState}  from "vuex"
+
 console.log('Number key mounted');
+
 export default {
+  // props: {
+  //   keyData: {
+  //     type: Object,
+  //     required: true
+  //   }
+  // },
   data() {
     return {
       mobileButtonStyle: {
@@ -16,13 +25,13 @@ export default {
     },
   },
   computed: {
-    // digit() {
-    //   return String(this.keyData.digit);
-    // },
-    // smallSize() {
-    //   return this.$store.state.phoneSmall;
-    // },
-    // ...Vuex.mapState(["isMobileDevice"]),
+    digit() {
+      return String(this.keyData.digit);
+    },
+    smallSize() {
+      return this.$store.state.phoneSmall;
+    },
+    ...mapState(["isMobileDevice"]),
   },
   directives: {
     longpressed: {
@@ -94,12 +103,12 @@ export default {
     },
   },
 };
-// const props = defineProps({
-//   keyData: {
-//     type: Object,
-//     required: true,
-//   },
-// });
+const props = defineProps({
+  keyData: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
 <template>
   <v-col cols="4" :style="{ padding: '0px', paddingTop: '2px' }">

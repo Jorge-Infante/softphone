@@ -1,4 +1,8 @@
 <script>
+import {mapState}  from "vuex"
+import {mapActions}  from "vuex"
+import { mapGetters } from 'vuex'
+
 console.log('conference manager mounted');
 export default {
   data() {
@@ -47,28 +51,28 @@ export default {
     },
   },
   methods: {
-    // ...Vuex.mapActions(["toggleConferenceRecord"]),
+    ...mapActions(["toggleConferenceRecord"]),
     removeMember(member) {
-      // this.$store.dispatch("removeConferenceMember", member);
+      this.$store.dispatch("removeConferenceMember", member);
     },
     closeOptions() {
-      // vueApp.$store.commit("SET_PHONE_STATE", {
-      //   phoneVar: "showConferenceOptions",
-      //   phoneState: false,
-      // });
+      vueApp.$store.commit("SET_PHONE_STATE", {
+        phoneVar: "showConferenceOptions",
+        phoneState: false,
+      });
     },
   },
   computed: {
-    // ...Vuex.mapState([
-    //   "userConferenceRole",
-    //   "snackbarMessage",
-    //   "conferenceMembers",
-    //   "recordConference",
-    //   "pjsipAccount",
-    //   "conferenceRecordDuration",
-    //   "isMobileDevice",
-    // ]),
-    // ...Vuex.mapGetters(["recordDurationFormat"]),
+    ...mapState([
+      "userConferenceRole",
+      "snackbarMessage",
+      "conferenceMembers",
+      "recordConference",
+      "pjsipAccount",
+      "conferenceRecordDuration",
+      "isMobileDevice",
+    ]),
+    ...mapGetters(["recordDurationFormat"]),
   },
 };
 </script>

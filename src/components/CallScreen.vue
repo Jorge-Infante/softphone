@@ -1,4 +1,7 @@
 <script>
+import {mapState}  from "vuex"
+import {mapActions}  from "vuex"
+
 console.log('CallScren mounted');
 //agregado fake :key="ev"
 export default {
@@ -52,13 +55,13 @@ export default {
     };
   },
   methods: {
-    // ...Vuex.mapActions(["removeInvitedChannel"]),
-    // showOptions() {
-    //   vueApp.$store.commit("SET_PHONE_STATE", {
-    //     phoneVar: "showConferenceOptions",
-    //     phoneState: true,
-    //   });
-    // },
+    ...mapActions(["removeInvitedChannel"]),
+    showOptions() {
+      vueApp.$store.commit("SET_PHONE_STATE", {
+        phoneVar: "showConferenceOptions",
+        phoneState: true,
+      });
+    },
     getEventLabel(event) {
       query = event.eventType == "IVR_DMTF" ? event.ivrSource : event.slugName;
       eventInfo = this.browserContacts.filter((x) => x.unique_id == query)[0];
@@ -81,20 +84,20 @@ export default {
     },
   },
   computed: {
-    // ...Vuex.mapState([
-    //   "userInCall",
-    //   "userInConference",
-    //   "userConferenceRole",
-    //   "callInfo",
-    //   "conferenceCallInfo",
-    //   "isAddingMember",
-    //   "isMobileDevice",
-    //   "callEvents",
-    //   "browserContacts",
-    // ]),
-    // callDuration() {
-    //   return this.$store.getters.callDurationFormat;
-    // },
+    ...mapState([
+      "userInCall",
+      "userInConference",
+      "userConferenceRole",
+      "callInfo",
+      "conferenceCallInfo",
+      "isAddingMember",
+      "isMobileDevice",
+      "callEvents",
+      "browserContacts",
+    ]),
+    callDuration() {
+      return this.$store.getters.callDurationFormat;
+    },
   },
 };
 </script>

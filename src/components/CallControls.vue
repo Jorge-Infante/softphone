@@ -1,4 +1,5 @@
 <script>
+import {mapState}  from "vuex"
 console.log('CallControls mounted');
 export default {
   data() {
@@ -71,23 +72,23 @@ export default {
     };
   },
   computed: {
-    // ...Vuex.mapState([
-    //   "userInCall",
-    //   "callInProgress",
-    //   "callNumber",
-    //   "warnTransfer",
-    //   "callDirection",
-    //   "showHangupButton",
-    //   "showCallButton",
-    //   "isMuted",
-    //   "isHold",
-    //   "userInConference",
-    //   "invitationData",
-    //   "isTransferInvited",
-    //   "isMobileDevice",
-    //   "disableCallAnswer",
-    //   "disableCallHangUp",
-    // ]),
+    ...mapState([
+      "userInCall",
+      "callInProgress",
+      "callNumber",
+      "warnTransfer",
+      "callDirection",
+      "showHangupButton",
+      "showCallButton",
+      "isMuted",
+      "isHold",
+      "userInConference",
+      "invitationData",
+      "isTransferInvited",
+      "isMobileDevice",
+      "disableCallAnswer",
+      "disableCallHangUp",
+    ]),
     keyboardActive() {
       console.log('keyboard active');
       // return this.$store.state.keyboardActive ? "#007bff" : "#272727";
@@ -96,28 +97,28 @@ export default {
   methods: {
     toggleMute() {
       console.log('toogle mute');
-      // this.$store.dispatch("pressMute");
+      this.$store.dispatch("pressMute");
     },
     toggleHold() {
       console.log('toggle hold');
-      // this.$store.dispatch("pressHold");
+      this.$store.dispatch("pressHold");
     },
     toggleKeyboard() {
       console.log('toogle keyboard');
-      // const keyboardState = !this.$store.state.keyboardActive;
-      // this.$store.commit("SET_PHONE_STATE", {
-      //   phoneVar: "keyboardActive",
-      //   phoneState: keyboardState,
-      // });
+      const keyboardState = !this.$store.state.keyboardActive;
+      this.$store.commit("SET_PHONE_STATE", {
+        phoneVar: "keyboardActive",
+        phoneState: keyboardState,
+      });
     },
     doCall() {
       console.log("do call enter VUE boton answer");
       // disable answer button to prevent multiple actions
       if (this.callNumber != "") {
-        // this.$store.commit("SET_PHONE_STATE", {
-        //   phoneVar: "disableCallAnswer",
-        //   phoneState: true,
-        // });
+        this.$store.commit("SET_PHONE_STATE", {
+          phoneVar: "disableCallAnswer",
+          phoneState: true,
+        });
       }
 
       if (this.$store.state.callDirection == "INCOMING") {

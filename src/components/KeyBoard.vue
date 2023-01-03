@@ -1,4 +1,6 @@
 <script>
+import {mapState}  from "vuex"
+
 console.log('Key board mounted');
 export default {
   data () {
@@ -54,12 +56,12 @@ export default {
     }
   },
   computed: {
-    // ...Vuex.mapState([
-    //   'callNumber', 
-    //   'userInCall',
-    //   'isMobileDevice',
-    //   'disableInput',
-    // ])
+    ...mapState([
+      'callNumber', 
+      'userInCall',
+      'isMobileDevice',
+      'disableInput',
+    ])
   }
 }
 </script>
