@@ -101,7 +101,7 @@ export const phoneMutations = {
     state.warnTransfer = true
   },
   APPEND_DIGIT (state, digit) {
-    currentNumber = state.callNumber
+    let currentNumber = state.callNumber
     state.callNumber = currentNumber + digit
   },
   CHANGE_PHONE_STATE (state, phoneState) {
