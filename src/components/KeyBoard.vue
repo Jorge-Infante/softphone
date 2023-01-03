@@ -1,5 +1,6 @@
 <script>
 import {mapState}  from "vuex"
+import NumberKey from "./NumberKey.vue";
 
 console.log('Key board mounted');
 export default {
@@ -62,6 +63,9 @@ export default {
       'isMobileDevice',
       'disableInput',
     ])
+  },
+  components:{
+    NumberKey,
   }
 }
 </script>
@@ -77,6 +81,6 @@ export default {
         :style="[baseInputStyle , isMobileDevice ? mobileInputStyle : inputStyle]"
         :disabled="disableInput || userInCall"
       />  
-      <number-key v-for="(digit, index) in digits" :keyData="digit" :key="index"></number-key>
+      <NumberKey v-for="(digit, index) in digits" :keyData="digit" :key="index"></NumberKey>
     </v-row>
 </template>

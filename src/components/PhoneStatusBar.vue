@@ -1,4 +1,6 @@
 <script>
+import {mapState}  from "vuex"
+
 console.log('phone status bar mounted');
 export default{
   data () {
@@ -11,19 +13,19 @@ export default{
   methods: {
     closePhone () {
       console.log('Esperando store');
-      // this.$store.commit('TOGGLE_PHONE')
+      this.$store.commit('TOGGLE_PHONE')
     },
     toggleCallStatistic () {
       console.log('Esperando store');
-      // this.$store.commit('TOGGLE_STATISTIC')
+      this.$store.commit('TOGGLE_STATISTIC')
     }
   },
   computed: {
     //Esperando vuex
-    // ...Vuex.mapState([
-    //   'isMobileDevice',
-    //   'callQuality',
-    // ]),
+    ...mapState([
+      'isMobileDevice',
+      'callQuality',
+    ]),
     colorStatus() {
       let color = ''
       if (this.callQuality < 0){

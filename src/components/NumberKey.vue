@@ -4,12 +4,12 @@ import {mapState}  from "vuex"
 console.log('Number key mounted');
 
 export default {
-  // props: {
-  //   keyData: {
-  //     type: Object,
-  //     required: true
-  //   }
-  // },
+  props: {
+    keyData: {
+      type: Object,
+      required: true,
+    }
+  },
   data() {
     return {
       mobileButtonStyle: {
@@ -26,6 +26,7 @@ export default {
   },
   computed: {
     digit() {
+      console.log(this.keyData);
       return String(this.keyData.digit);
     },
     smallSize() {
@@ -103,12 +104,12 @@ export default {
     },
   },
 };
-const props = defineProps({
-  keyData: {
-    type: Object,
-    required: true,
-  },
-});
+// const props = defineProps({
+//   keyData: {
+//     type: Object,
+//     required: true,
+//   },
+// });
 </script>
 <template>
   <v-col cols="4" :style="{ padding: '0px', paddingTop: '2px' }">

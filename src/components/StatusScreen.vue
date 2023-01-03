@@ -1,4 +1,6 @@
 <script>
+import {mapState}  from "vuex"
+
 console.log('status screen mounted');
 // &lt; remplazo de <
 export default {
@@ -40,17 +42,17 @@ export default {
   methods: {
     toggleCallStatistic() {
       console.log('togglecallstatistic');
-      // this.$store.commit("TOGGLE_STATISTIC");
+      this.$store.commit("TOGGLE_STATISTIC");
     },
   },
   computed: {
-    // ...Vuex.mapState([
-    //   "showCallStatistics",
-    //   "inCallPeers",
-    //   "isMobileDevice",
-    //   "userInCall",
-    //   "callQuality",
-    // ]),
+    ...mapState([
+      "showCallStatistics",
+      "inCallPeers",
+      "isMobileDevice",
+      "userInCall",
+      "callQuality",
+    ]),
     callStat() {
       strcall = "";
       strStyle =

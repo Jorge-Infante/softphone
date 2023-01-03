@@ -1,4 +1,6 @@
 <script>
+import {mapState}  from "vuex"
+
 console.log('Phone component mounted');
 export default {
   data() {
@@ -19,6 +21,14 @@ export default {
         height: "100%",
       },
     }
+  },
+  computed: {
+    ...mapState([
+      'keyboardActive', 
+      'userInConference', 
+      'showConferenceOptions',
+      'isMobileDevice',
+      ])
   },
   components:{
     PhoneStatusBar,
