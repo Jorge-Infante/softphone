@@ -42,17 +42,15 @@ export default {
         height: '75%'
       }
     }
-    update_Number : ''
   },
   methods: {
     removeDigit () {
       console.log("removeDigit");
       this.$store.commit('REMOVE_DIGIT')
     },
-    updateNumber (value) {
-      console.log('Mi evento: ', this.update_Number);
-      console.log('Mi eve: ', value.target.value);
-      this.$store.commit('SET_PHONE_STATE', { phoneVar: 'callNumber', phoneState: value.data })
+    updateNumber (event) {
+      console.log("mi valor real:",event.target.value);
+      this.$store.commit('SET_PHONE_STATE', { phoneVar: 'callNumber', phoneState: event.target.value})
     },
     doCall () { 
       console.log("doCall");     
@@ -82,8 +80,7 @@ export default {
         :append-icon="userInCall?undefined:'mdi-backspace'"
         @click:append="removeDigit"
         @keyup.enter="doCall"
-        @keypress = "updateNumber"
-        v-model="update_Number"
+        @input="updateNumber"
         :style="[baseInputStyle , isMobileDevice ? mobileInputStyle : inputStyle]"
         :disabled="disableInput || userInCall"
       />  

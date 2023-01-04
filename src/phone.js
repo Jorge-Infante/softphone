@@ -108,7 +108,7 @@ export const phoneMutations = {
     state.phoneStatus = phoneState
   },
   REMOVE_DIGIT (state) {
-    currentNumber = state.callNumber
+    let currentNumber = state.callNumber
     state.callNumber = currentNumber.slice(0, currentNumber.length - 1)
   },
   RESET_NUMBER (state) {
@@ -370,6 +370,9 @@ export const phoneMutations = {
   },
 
 }
+
+//function
+
 
 // ctxSip = {
 //           config : {
