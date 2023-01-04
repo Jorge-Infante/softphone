@@ -144,6 +144,7 @@ export default createStore({
               // Vue.set(state.inCallPeers, 1, userInfo)
             }, (error) => {
               callInfo = {status:'Llamando', label:'Desconocido', info:'Número - '+number}
+              console.log(callInfo)
               commit('UPDATE_CALL_INFO', callInfo)
               state.showCallButton = false
               commit('START_CALL')
