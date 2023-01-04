@@ -21,6 +21,7 @@ export default {
   },
   methods: {
     appendDigit() {
+      console.log("appendDigit");
       this.$store.dispatch("pressDigit", this.digit);
     },
   },

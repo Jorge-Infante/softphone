@@ -1,4 +1,4 @@
-<script> 
+<script>
 import {mapState}  from "vuex"
 import NumberKey from "./NumberKey.vue";
 
@@ -45,12 +45,15 @@ export default {
   },
   methods: {
     removeDigit () {
+      console.log("removeDigit");
       this.$store.commit('REMOVE_DIGIT')
     },
     updateNumber (value) {
-      this.$store.commit('SET_PHONE_STATE', { phoneVar: 'callNumber', phoneState: value })
+      console.log('Mi evento: ', value);
+      this.$store.commit('SET_PHONE_STATE', { phoneVar: 'callNumber', phoneState: value.data })
     },
-    doCall () {      
+    doCall () { 
+      console.log("doCall");     
       // disable input to prevent multiple outgoing calls
       this.$store.commit('SET_PHONE_STATE', { phoneVar: 'disableInput', phoneState: true })
       this.$store.dispatch('outgoingCall')

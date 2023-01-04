@@ -73,7 +73,7 @@ export default {
   },
 };
 </script>
-<template>
+<!-- <template>
   <div>
     <div v-if="!isMobileDevice" :style="widgetStyle" @click="showPhone">
       <span :style="[badgeStyle, badgeColor]"></span>
@@ -93,6 +93,6 @@ export default {
       <v-icon dark> mdi-phone </v-icon>
     </v-btn>
   </div>
-</template>
+</template> -->
 
 
