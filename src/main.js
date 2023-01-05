@@ -15,22 +15,3 @@ const vuetify = createVuetify({
 })
 
 createApp(App).use(store).use(vuetify).mount('#app')
-
-
-// const cors = require('cors');
-// App.use(cors())
-// var whiteList = ['https://test.sipmovil.com/customer/people/']
-
-// var corsOptions = {
-//   origin : function(origin, callback){
-//     if(whiteList.indexOf(origin) != -1){
-//       callback(null, true);
-//     }else{
-//       callback(new Error('no cors'))
-//     }
-//   }
-// }
-
-// appendFile.get('/', cors(corsOptions),(req, res)=>{
-//   res.json({mensaje: 'ok'})
-// })

@@ -83,7 +83,7 @@ export default {
         @input="updateNumber"
         :style="[baseInputStyle , isMobileDevice ? mobileInputStyle : inputStyle]"
         :disabled="disableInput || userInCall"
-      />  
+      /> 
       <NumberKey v-for="(digit, index) in digits" :keyData="digit" :key="index"></NumberKey>
     </v-row>
 </template>

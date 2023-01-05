@@ -1,7 +1,6 @@
 <script>
 import Phone from "./components/Phone.vue";
 import ContactBrowser from "./components/ContactBrowser.vue";
-import NumberKey from "./components/NumberKey.vue";
 import PhoneWidget from "./components/PhoneWidget.vue";
 import {mapState}  from "vuex"
 
@@ -93,7 +92,6 @@ export default {
   components: {
     Phone,
     ContactBrowser,
-    NumberKey,
     PhoneWidget,
   },
 };
@@ -102,6 +100,5 @@ export default {
 <template>
   <Phone />
   <ContactBrowser />
-  <NumberKey />
   <PhoneWidget />
 </template>

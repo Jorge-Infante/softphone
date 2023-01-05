@@ -5,9 +5,6 @@ console.log('phone status bar mounted');
 export default{
   data () {
     return {
-      isMobileDevice:3,
-      callQuality:5,
-      
     }
   },
   methods: {

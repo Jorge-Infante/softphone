@@ -50,6 +50,7 @@ import KeyBoard from './KeyBoard.vue';
 <template>
   <v-card
     elevation="2"
+    width="300"
     dark
     :style="[baseStyle, isMobileDevice ? mobilePhoneStyle : phoneStyle]"
   >
