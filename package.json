@@ -2,6 +2,7 @@
   "name": "softphone_sipmovil",
   "version": "0.0.0",
   "private": true,
+  "serve": "vue-cli-service serve --https true",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "vite-plugin-mkcert": "^1.10.1"
   }
 }
