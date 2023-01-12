@@ -14,4 +14,4 @@ const vuetify = createVuetify({
   directives,
 })
 
-createApp(App).use(store).use(vuetify).mount('#app')
+export default createApp(App).use(store).use(vuetify).mount('#app')

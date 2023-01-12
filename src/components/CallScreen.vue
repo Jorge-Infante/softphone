@@ -37,21 +37,7 @@ export default {
         marginBottom: "5px",
         marginRight: "5px",
         marginTop: "4px",
-      },
-      ev: {
-        eventType: "IVR_DMTF",
-      },
-      userInCall: true,
-      userInConference: true,
-      userConferenceRole: "Admin",
-      callInfo: {
-        info: "info",
-      },
-      conferenceCallInfo: true,
-      isAddingMember: null,
-      isMobileDevice: true,
-      callEvents: [1,2,3],
-      browserContacts: null,
+      }
     };
   },
   methods: {
